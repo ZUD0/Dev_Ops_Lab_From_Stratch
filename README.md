@@ -1,8 +1,3 @@
-Got it 👍 — your content is solid, it just needs proper Markdown formatting. I’ll clean it up so the commands render nicely and everything looks professional.
-
-Here’s the improved `README.md` for your **Day 1 – Environment Setup**:
-
-````markdown
 # DevOps Lab from Scratch 🚀
 
 This repo documents my journey of learning **DevOps hands-on**, starting from a clean Xubuntu laptop.  
