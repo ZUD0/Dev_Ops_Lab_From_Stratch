@@ -1,10 +1,30 @@
 version: '3.8'
 
 services:
-  backend:
+  backend1:
     build: ./backend
     ports:
-      - "4000:4000"
+      - "4001:4000"
+    environment:
+      - SESSION_SECRET=your-very-strong-secret
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  backend2:
+    build: ./backend
+    ports:
+      - "4002:4000"
+    environment:
+      - SESSION_SECRET=your-very-strong-secret
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+
+  backend3:
+    build: ./backend
+    ports:
+      - "4003:4000"
     environment:
       - SESSION_SECRET=your-very-strong-secret
       - REDIS_URL=redis://redis:6379
@@ -28,5 +48,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - backend
+      - backend1
+      - backend2
+      - backend3
       - frontend
